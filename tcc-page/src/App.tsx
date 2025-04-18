@@ -177,89 +177,6 @@ const App: React.FC = () => {
       ),
     },
     {
-      id: 'methodology',
-      title: 'Metodologia',
-      content: (
-        <div>
-          <h2 style={styles.sectionHeading}>Metodologia</h2>
-          <p>
-            A metodologia adotada neste trabalho foi cuidadosamente selecionada para garantir a consistência e confiabilidade dos resultados obtidos. Abaixo estão os principais aspectos metodológicos:
-          </p>
-          <div style={styles.timeline}>
-            <div style={styles.timelineItem}>
-              <div style={styles.timelineDot}></div>
-              <div style={styles.timelineDate}>Etapa 1</div>
-              <div>Descrição detalhada da primeira etapa metodológica do projeto.</div>
-            </div>
-            <div style={styles.timelineItem}>
-              <div style={styles.timelineDot}></div>
-              <div style={styles.timelineDate}>Etapa 2</div>
-              <div>Descrição detalhada da segunda etapa metodológica do projeto.</div>
-            </div>
-            <div style={styles.timelineItem}>
-              <div style={styles.timelineDot}></div>
-              <div style={styles.timelineDate}>Etapa 3</div>
-              <div>Descrição detalhada da terceira etapa metodológica do projeto.</div>
-            </div>
-            <div style={styles.timelineItem}>
-              <div style={styles.timelineDot}></div>
-              <div style={styles.timelineDate}>Etapa 4</div>
-              <div>Descrição detalhada da quarta etapa metodológica do projeto.</div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 'literature',
-      title: 'Revisão Bibliográfica',
-      content: (
-        <div>
-          <h2 style={styles.sectionHeading}>Revisão Bibliográfica</h2>
-          <p>
-            A fundamentação teórica deste trabalho é baseada em uma extensa revisão da literatura existente sobre o tema. Abaixo estão alguns dos principais autores e teorias que embasam esta pesquisa:
-          </p>
-          <div style={styles.paper}>
-            <div style={styles.paperTitle}>Autor, A. B. (Ano). Título do Artigo.</div>
-            <p>Breve descrição das contribuições deste artigo para o seu trabalho.</p>
-          </div>
-          <div style={styles.paper}>
-            <div style={styles.paperTitle}>Autor, C. D. (Ano). Título do Livro.</div>
-            <p>Explicação sobre como este livro contribui para a fundamentação teórica do seu TCC.</p>
-          </div>
-          <div style={styles.paper}>
-            <div style={styles.paperTitle}>Autor, E. F. (Ano). Título da Pesquisa.</div>
-            <p>Resumo dos resultados relevantes desta pesquisa para o seu trabalho.</p>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 'results',
-      title: 'Resultados Preliminares',
-      content: (
-        <div>
-          <h2 style={styles.sectionHeading}>Resultados Preliminares</h2>
-          <p>
-            Nesta seção, apresento os resultados preliminares obtidos até o momento em minha pesquisa. É importante ressaltar que estes resultados ainda estão em processo de análise e podem ser refinados à medida que o trabalho avança:
-          </p>
-          <div style={styles.flexRow}>
-            <div style={styles.card}>
-              <h3>Resultado 1</h3>
-              <p>Descrição detalhada do primeiro resultado significativo obtido na pesquisa.</p>
-            </div>
-            <div style={styles.card}>
-              <h3>Resultado 2</h3>
-              <p>Descrição detalhada do segundo resultado significativo obtido na pesquisa.</p>
-            </div>
-          </div>
-          <p style={{ marginTop: '20px' }}>
-            A interpretação destes resultados sugere que [sua interpretação preliminar dos dados]. No entanto, análises adicionais são necessárias para confirmar estas observações iniciais.
-          </p>
-        </div>
-      ),
-    },
-    {
       id: 'schedule',
       title: 'Cronograma',
       content: (
@@ -298,31 +215,7 @@ const App: React.FC = () => {
         </div>
       ),
     },
-    {
-      id: 'contact',
-      title: 'Contato',
-      content: (
-        <div>
-          <h2 style={styles.sectionHeading}>Contato</h2>
-          <p>
-            Para mais informações sobre este projeto de pesquisa ou para discussões relacionadas ao tema, sinta-se à vontade para entrar em contato:
-          </p>
-          <div style={styles.contactInfo}>
-            <p><strong>Nome:</strong> [Seu Nome Completo]</p>
-            <p><strong>Instituição:</strong> [Nome da sua Universidade]</p>
-            <p><strong>Departamento:</strong> [Seu Departamento]</p>
-            <p><strong>E-mail:</strong> [Seu E-mail Acadêmico]</p>
-            <p><strong>Orientador:</strong> [Nome do seu Orientador]</p>
-          </div>
-          <div style={styles.socialLinks}>
-            <a href="#" style={{ color: '#4a89dc', textDecoration: 'none' }}>LinkedIn</a>
-            <a href="#" style={{ color: '#4a89dc', textDecoration: 'none' }}>ResearchGate</a>
-            <a href="#" style={{ color: '#4a89dc', textDecoration: 'none' }}>Academia.edu</a>
-            <a href="#" style={{ color: '#4a89dc', textDecoration: 'none' }}>GitHub</a>
-          </div>
-        </div>
-      ),
-    },
+
   ];
 
   // Handler for changing sections
