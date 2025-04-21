@@ -1,0 +1,7 @@
+Para futuras atualizações:
+Se você quiser atualizar o arquivo PDF no futuro, siga estes passos:
+Substitua o arquivo Proposta_de_TCC.pdf na pasta tcc-page/public
+Execute npm run build na pasta tcc-page
+Copie o arquivo PDF e os arquivos da pasta build para a raiz com cp -r tcc-page/build/* . && cp tcc-page/public/Proposta_de_TCC.pdf .
+Comite e envie as alterações
+Isso garantirá que seu GitHub Pages esteja sempre mostrando a versão mais recente do seu TCC.

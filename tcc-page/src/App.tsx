@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Define the types for our sections and navigation
 interface Section {
   id: string;
   title: string;
   content: React.ReactNode;
+  action?: () => void; // Nova propriedade opcional para executar ações ao clicar no botão
 }
 
 const App: React.FC = () => {
@@ -145,6 +146,11 @@ const App: React.FC = () => {
     },
   };
 
+  // Função para abrir o PDF da proposta
+  const openProposalPDF = () => {
+    window.open('/Proposta_de_TCC.pdf', '_blank');
+  };
+
   // Define the sections
   const sections: Section[] = [
     {
@@ -187,58 +193,36 @@ const App: React.FC = () => {
         <div>
           <h2 style={styles.sectionHeading}>Proposta de TCC</h2>
           <p>
-            Aqui você pode visualizar ou baixar a proposta completa do meu Trabalho de Conclusão de Curso (TCC).
+            Carregando o PDF da proposta...
           </p>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '30px',
-          }}>
-            <a 
-              href="/Proposta_de_TCC.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                padding: '15px 30px',
-                backgroundColor: '#4a89dc',
-                color: 'white',
-                textDecoration: 'none',
-                borderRadius: '5px',
-                fontWeight: 'bold',
-                fontSize: '1.1rem',
-                boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Visualizar Proposta (PDF)
-            </a>
-          </div>
-          <div style={{
-            marginTop: '50px',
-            padding: '20px',
-            backgroundColor: '#f8f9fa',
-            borderRadius: '8px',
-            border: '1px solid #e9ecef',
-          }}>
-            <h3 style={{ marginTop: 0 }}>Resumo da Proposta</h3>
-            <p>
-              Esta proposta apresenta os objetivos, justificativa, metodologia e cronograma planejados para o desenvolvimento do meu Trabalho de Conclusão de Curso.
-            </p>
-            <p>
-              Para uma análise mais detalhada, acesse o documento completo através do botão acima.
-            </p>
-          </div>
         </div>
       ),
+      action: openProposalPDF,
     },
-
   ];
 
   // Handler for changing sections
   const handleSectionChange = (sectionId: string) => {
+    const selectedSection = sections.find(section => section.id === sectionId);
+    
+    // Se a seção tiver uma ação definida, execute-a
+    if (selectedSection && selectedSection.action) {
+      selectedSection.action();
+      return;
+    }
+    
+    // Caso contrário, apenas mude a seção ativa
     setActiveSection(sectionId);
   };
+
+  // Use effect para abrir o PDF automaticamente quando a seção de proposta é selecionada diretamente
+  useEffect(() => {
+    if (activeSection === 'proposal') {
+      openProposalPDF();
+      // Após abrir o PDF, volte para a seção "Sobre o Projeto"
+      setActiveSection('about');
+    }
+  }, [activeSection]);
 
   // Find the current active section
   const currentSection = sections.find(section => section.id === activeSection) || sections[0];
