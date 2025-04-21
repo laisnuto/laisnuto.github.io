@@ -5,3 +5,123 @@ Execute npm run build na pasta tcc-page
 Copie o arquivo PDF e os arquivos da pasta build para a raiz com cp -r tcc-page/build/* . && cp tcc-page/public/Proposta_de_TCC.pdf .
 Comite e envie as alterações
 Isso garantirá que seu GitHub Pages esteja sempre mostrando a versão mais recente do seu TCC.
+
+
+# Guia para Atualizar o Site TCC no GitHub Pages
+
+Este guia contém as instruções e comandos necessários para atualizar seu site TCC hospedado no GitHub Pages.
+
+## Instruções Passo a Passo
+
+### 1. Editar os Arquivos Fonte
+
+Primeiro, navegue até a pasta do projeto React onde estão os arquivos fonte:
+
+```
+cd ~/Documents/TCC/tcc-page
+```
+
+Edite os arquivos que você deseja modificar. Os principais arquivos são:
+- `src/App.tsx` - Para mudar o conteúdo ou layout da página
+- `public/` - Para adicionar arquivos como PDFs ou imagens
+
+### 2. Testar Localmente (Opcional)
+
+Se quiser verificar as alterações antes de publicar, execute:
+
+```
+npm start
+```
+
+Isso iniciará um servidor local e você poderá ver as mudanças em http://localhost:3000
+Quando terminar de testar, pressione Ctrl+C para encerrar o servidor.
+
+### 3. Construir a Versão Atualizada
+
+Gere os arquivos otimizados para produção:
+
+```
+npm run build
+```
+
+### 4. Copiar os Arquivos Para a Pasta Raiz
+
+Volte para a pasta raiz e copie os arquivos compilados:
+
+```
+cd ..
+cp -r tcc-page/build/* .
+```
+
+Se você adicionou novos arquivos na pasta public (como PDFs), copie-os também:
+
+```
+cp tcc-page/public/NovoPDF.pdf .
+```
+
+### 5. Verificar e Corrigir o Título da Página
+
+O processo de build sempre reseta o título para "React App". Verifique o título:
+
+```
+cat index.html
+```
+
+Se necessário, edite o arquivo index.html para mudar o título para "TCC - Laís Nuto".
+
+### 6. Comitar e Enviar para o GitHub
+
+Verifique quais arquivos foram modificados:
+
+```
+git status
+```
+
+Adicione todos os arquivos modificados:
+
+```
+git add .
+```
+
+Faça o commit com uma mensagem descritiva:
+
+```
+git commit -m "Descrição das alterações feitas"
+```
+
+Envie para o GitHub:
+
+```
+git push origin main
+```
+
+### 7. Verificar o Site
+
+Espere alguns minutos para que o GitHub Pages processe as alterações (geralmente 1-5 minutos) e então acesse seu site em:
+
+```
+https://laisnuto.github.io/
+```
+
+## Resumo dos Comandos
+
+```
+cd ~/Documents/TCC/tcc-page
+[edite os arquivos]
+npm run build
+cd ..
+cp -r tcc-page/build/* .
+[verifique e corrija o título no index.html se necessário]
+git add .
+git commit -m "Descrição das alterações"
+git push origin main
+```
+
+## Observações Importantes
+
+- Cada build gera arquivos JavaScript com nomes diferentes (com hash)
+- Sempre mantenha o código fonte na pasta `tcc-page` e edite apenas lá
+- A pasta raiz contém apenas os arquivos compilados para o GitHub Pages
+- Para adicionar novos PDFs ou imagens, coloque-os na pasta `public/` e depois copie para a raiz
+- Espere alguns minutos após o push para ver as alterações no site
+

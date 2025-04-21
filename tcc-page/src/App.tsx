@@ -161,22 +161,23 @@ const App: React.FC = () => {
           <h2 style={styles.sectionHeading}>Sobre o Projeto</h2>
           <p>
           Este projeto representa uma parte muito importante da minha trajetória acadêmica. Desde o Ensino Médio, me envolvo com iniciativas voluntárias na área da Educação e, nos últimos anos, venho trabalhando em uma EdTech. Por isso, poder unir esses dois mundos no meu TCC, tecnologia e Educação, torna esse projeto ainda mais significativo.
-          O foco do trabalho é entender como os modelos de linguagem (LLMs) podem ajudar na correção automática da redação do ENEM, especialmente na competência 3, que avalia a construção de argumentos. A ideia é usar engenharia de prompts, analisar dados reais e conversar com corretoras para tentar aproximar o modelo computacional da forma como uma pessoa realmente avalia esse tipo de texto. Minha intenção é contribuir para que a tecnologia seja uma aliada mais justa, transparente e eficaz no contexto educacional.
           </p>
           <p>
-            O objetivo principal deste trabalho é investigar [breve descrição do seu objetivo]. Através de uma abordagem [metodologia], pretendo contribuir para o avanço do conhecimento neste campo.
+          O foco do trabalho é entender como os modelos de linguagem (LLMs) podem ajudar na correção automática da redação do ENEM, especialmente na competência 3, que avalia a construção de argumentos. A ideia é usar engenharia de prompts, analisar dados reais e conversar com corretoras para tentar aproximar o modelo computacional da forma como uma pessoa realmente avalia esse tipo de texto. Minha intenção é contribuir para que a tecnologia seja uma aliada mais justa, transparente e eficaz no contexto educacional.
           </p>
           <div style={styles.flexRow}>
             <div style={styles.card}>
               <h3>Problema de Pesquisa</h3>
-              <p>Descreva aqui o problema de pesquisa que você está tentando resolver com seu TCC.</p>
+                <p>
+                Como melhorar a precisão de corretores automáticos baseados em IA na avaliação de redações do ENEM, especialmente em competências argumentativas como a competência 3, que ainda apresentam desempenho baixo e maior disparidade em relação à avaliação feita por corretores humanos?
+                </p>
             </div>
             <div style={styles.card}>
               <h3>Objetivos</h3>
-              <p>-Coletar um dataset de redações reais com vista pedagógica.
-            - Entrevistar corretoras experientes para mapear os critérios práticos da avaliação da competência 3.
-            - Testar abordagens com engenharia de prompt e extração de argumentos com LLMs.
-            - Avaliar o desempenho de diferentes modelos e técnicas de fine-tuning.</p>
+              <p>Coletar um dataset de redações reais com vista pedagógica.</p>
+              <p>Testar abordagens com engenharia de prompt e extração de argumentos com LLMs</p>
+              <p>Avaliar o desempenho de diferentes modelos e técnicas de fine-tuning</p>
+            
             </div>
             <div style={styles.card}>
               <h3>Justificativa</h3>
