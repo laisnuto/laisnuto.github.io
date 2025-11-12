@@ -163,25 +163,25 @@ const TCCPage: React.FC = () => {
           Este projeto representa uma parte muito importante da minha trajetória acadêmica. Desde o Ensino Médio, me envolvo com iniciativas voluntárias na área da Educação e, nos últimos anos, venho trabalhando em uma EdTech. Por isso, poder unir esses dois mundos no meu TCC, tecnologia e Educação, torna esse projeto ainda mais significativo.
           </p>
           <p>
-          O foco do trabalho é entender como os modelos de linguagem (LLMs) podem ajudar na correção automática da redação do ENEM, especialmente na competência 3, que avalia a construção de argumentos. A ideia é usar engenharia de prompts, analisar dados reais e conversar com corretoras para tentar aproximar o modelo computacional da forma como uma pessoa realmente avalia esse tipo de texto. Minha intenção é contribuir para que a tecnologia seja uma aliada mais justa, transparente e eficaz no contexto educacional.
+          O foco do trabalho é investigar se modelos de linguagem treinados em redações não oficiais (simulados do ENEM) conseguem avaliar adequadamente redações oficiais do exame. Redações oficiais do ENEM são extremamente difíceis de obter, pois apenas algumas redações nota mil são divulgadas publicamente. Por isso, a maioria dos sistemas de correção automática são treinados em datasets de redações de simulados, mas não há validação se esses modelos performam bem em redações oficiais. Neste trabalho, construímos um dataset inédito de 157 redações oficiais do ENEM com suas notas oficiais e testamos se modelos pré-treinados em redações não oficiais conseguem avaliar essas redações oficiais.
           </p>
           <div style={styles.flexRow}>
             <div style={styles.card}>
               <h3>Problema de Pesquisa</h3>
                 <p>
-                Como melhorar a precisão de corretores automáticos baseados em IA na avaliação de redações do ENEM, especialmente em competências argumentativas como a competência 3, que ainda apresentam desempenho baixo e maior disparidade em relação à avaliação feita por corretores humanos?
+                Modelos treinados em redações não oficiais (simulados do ENEM) podem avaliar adequadamente redações oficiais do exame? Existe transferência de aprendizado entre datasets de redações não oficiais e redações oficiais do ENEM?
                 </p>
             </div>
             <div style={styles.card}>
               <h3>Objetivos</h3>
-              <p>Coletar um dataset de redações reais com vista pedagógica.</p>
-              <p>Testar abordagens com engenharia de prompt e extração de argumentos com LLMs</p>
-              <p>Avaliar o desempenho de diferentes modelos e técnicas de fine-tuning</p>
-            
+              <p>Construir e disponibilizar um dataset de redações oficiais do ENEM com suas notas oficiais.</p>
+              <p>Avaliar o desempenho de modelos pré-treinados em redações não oficiais em redações oficiais (zero-shot).</p>
+              <p>Investigar se fine-tuning em redações não oficiais ajuda modelos a se adaptarem a redações oficiais.</p>
+              <p>Comparar características linguísticas entre redações oficiais e não oficiais.</p>
             </div>
             <div style={styles.card}>
               <h3>Justificativa</h3>
-              <p>Apesar dos avanços em IA os modelos atuais ainda enfrentam dificuldades em interpretar argumentos e avaliar aspectos subjetivos da escrita, especialmente nas competências 3 do ENEM. Por outro lado, corretores humanos apresentam taxa significativamente alta de concordância nessa competência, o que pode tornar os sistemas de correção mais precisos e úteis como ferramenta de apoio para estudantes, professores e plataformas educacionais.</p>
+              <p>Apesar dos avanços em IA, os modelos atuais de correção automática enfrentam uma limitação crítica: são treinados principalmente em redações de simulados do ENEM, pois redações oficiais são extremamente difíceis de obter. No entanto, não há validação se esses modelos performam adequadamente em redações oficiais do exame. A criação de um dataset de redações oficiais permite validar a efetividade desses sistemas, tornando-os mais confiáveis e úteis como ferramenta de apoio para estudantes, professores e plataformas educacionais que buscam preparação para o ENEM real.</p>
             </div>
           </div>
         </div>
@@ -233,7 +233,7 @@ const TCCPage: React.FC = () => {
       <header style={styles.header}>
         <h1 style={styles.title}>Trabalho de Conclusão de Curso</h1>
         <p style={styles.subtitle}>
-        Avaliação Automática da Competência 3 em Redações do ENEM com Modelos de Linguagem <br />
+        Avaliação de Modelos de Linguagem Treinados em Redações Não Oficiais para Correção de Redações Oficiais do ENEM <br />
           Laís Nuto Rossman - Universidade de São Paulo
         </p>
         <nav style={styles.nav}>

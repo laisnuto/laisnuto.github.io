@@ -152,9 +152,9 @@ const HomePage: React.FC = () => {
           >
             <h3 style={styles.projectTitle}>Trabalho de Conclusão de Curso</h3>
             <p style={styles.projectDescription}>
-              Avaliação Automática da Competência 3 em Redações do ENEM com Modelos de Linguagem. 
-              Projeto de pesquisa que explora o uso de LLMs para correção automática de redações, 
-              com foco em melhorar a precisão na avaliação de argumentos.
+              Avaliação de Modelos de Linguagem Treinados em Redações Não Oficiais para Correção de Redações Oficiais do ENEM. 
+              Projeto de pesquisa que investiga se modelos de linguagem treinados em redações de simulados do ENEM 
+              podem avaliar adequadamente redações oficiais do exame, utilizando um dataset inédito de redações oficiais.
             </p>
             <div style={styles.projectTags}>
               <span style={styles.tag}>IA</span>
