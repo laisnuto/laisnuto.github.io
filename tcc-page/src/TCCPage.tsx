@@ -146,9 +146,14 @@ const TCCPage: React.FC = () => {
     },
   };
 
-  // Função para abrir o PDF da proposta
+ 
   const openProposalPDF = () => {
-    window.open('/Proposta_de_TCC.pdf', '_blank');
+    window.open('/files/Proposta_de_TCC.pdf', '_blank');
+  };
+
+ 
+  const openPosterPDF = () => {
+    window.open('/files/poster.pdf', '_blank');
   };
 
   // Define the sections
@@ -175,9 +180,10 @@ const TCCPage: React.FC = () => {
             <div style={styles.card}>
               <h3>Objetivos</h3>
               <p>Construir e disponibilizar um dataset de redações oficiais do ENEM com suas notas oficiais.</p>
-              <p>Avaliar o desempenho de modelos pré-treinados em redações não oficiais em redações oficiais (zero-shot).</p>
-              <p>Investigar se fine-tuning em redações não oficiais ajuda modelos a se adaptarem a redações oficiais.</p>
-              <p>Comparar características linguísticas entre redações oficiais e não oficiais.</p>
+              <p>Investigar se os simulados são realmente parecidos com as redações oficiais através de análise comparativa.</p>
+              <p>Avaliar se modelos treinados apenas em simulados conseguem corrigir adequadamente textos reais (zero-shot).</p>
+              <p>Analisar o desempenho ao treinar modelos apenas no conjunto oficial (pequeno).</p>
+              <p>Verificar se o pré-treino em simulados melhora a correção de textos oficiais.</p>
             </div>
             <div style={styles.card}>
               <h3>Justificativa</h3>
@@ -194,11 +200,24 @@ const TCCPage: React.FC = () => {
         <div>
           <h2 style={styles.sectionHeading}>Proposta de TCC</h2>
           <p>
-            Carregando o PDF da proposta...
+            Carregando o PDF...
           </p>
         </div>
       ),
       action: openProposalPDF,
+    },
+    {
+      id: 'poster',
+      title: 'Poster',
+      content: (
+        <div>
+          <h2 style={styles.sectionHeading}>Poster</h2>
+          <p>
+            Carregando o PDF...
+          </p>
+        </div>
+      ),
+      action: openPosterPDF,
     },
   ];
 
@@ -231,10 +250,9 @@ const TCCPage: React.FC = () => {
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <h1 style={styles.title}>Trabalho de Conclusão de Curso</h1>
+        <h1 style={styles.title}>Avaliação de Modelos de Correção Automática de Redações ENEM</h1>
         <p style={styles.subtitle}>
-        Avaliação de Modelos de Linguagem Treinados em Redações Não Oficiais para Correção de Redações Oficiais do ENEM <br />
-          Laís Nuto Rossman - Universidade de São Paulo
+        Um estudo com redações oficiais
         </p>
         <nav style={styles.nav}>
           {sections.map((section) => (
