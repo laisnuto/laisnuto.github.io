@@ -156,6 +156,10 @@ const TCCPage: React.FC = () => {
     window.open('/files/poster.pdf', '_blank');
   };
 
+  const openMonografiaPDF = () => {
+    window.open('/files/monografia.pdf', '_blank');
+  };
+
   // Define the sections
   const sections: Section[] = [
     {
@@ -218,6 +222,19 @@ const TCCPage: React.FC = () => {
         </div>
       ),
       action: openPosterPDF,
+    },
+    {
+      id: 'monografia',
+      title: 'Monografia',
+      content: (
+        <div>
+          <h2 style={styles.sectionHeading}>Monografia</h2>
+          <p>
+            Carregando o PDF...
+          </p>
+        </div>
+      ),
+      action: openMonografiaPDF,
     },
   ];
 
