@@ -36,9 +36,10 @@ const TCCPage: React.FC = () => {
       fontSize: '2.5rem',
       marginBottom: '10px',
       color: '#2c3e50',
+      textAlign: 'center' as const,
     },
     subtitle: {
-      fontSize: '1.2rem',
+      fontSize: '1.5rem',
       color: '#7f8c8d',
       marginBottom: '20px',
       textAlign: 'center' as const,
@@ -267,6 +268,7 @@ const TCCPage: React.FC = () => {
   return (
     <div style={styles.container}>
       <header style={styles.header}>
+        
         <h1 style={styles.title}>Avaliação de Modelos de Correção Automática de Redações ENEM</h1>
         <p style={styles.subtitle}>
         Um estudo com redações oficiais
