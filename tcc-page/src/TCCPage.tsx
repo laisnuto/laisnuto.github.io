@@ -11,6 +11,8 @@ interface Section {
 const TCCPage: React.FC = () => {
   // State to track the active section
   const [activeSection, setActiveSection] = useState<string>('about');
+  // State to track hovered button
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
   
   // Define the styles using inline CSS
   const styles = {
@@ -83,6 +85,11 @@ const TCCPage: React.FC = () => {
       fontSize: '1rem',
       transition: 'all 0.3s ease',
       outline: 'none',
+    },
+    navButtonHover: {
+      backgroundColor: '#e9ecef',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
     },
     navButtonActive: {
       backgroundColor: '#4a89dc',
@@ -184,6 +191,14 @@ const TCCPage: React.FC = () => {
     window.open('/files/monografia.pdf', '_blank');
   };
 
+  const openDatasetLink = () => {
+    window.open('https://huggingface.co/datasets/laisnuto/self-collected-ENEM-dataset', '_blank');
+  };
+
+  const openModelsLink = () => {
+    window.open('https://huggingface.co/laisnuto/collections', '_blank');
+  };
+
   // Define the sections
   const sections: Section[] = [
     {
@@ -263,6 +278,32 @@ const TCCPage: React.FC = () => {
       ),
       action: openMonografiaPDF,
     },
+    {
+      id: 'dataset',
+      title: 'Dataset',
+      content: (
+        <div>
+          <h2 style={styles.sectionHeading}>Dataset</h2>
+          <p>
+            Carregando o dataset...
+          </p>
+        </div>
+      ),
+      action: openDatasetLink,
+    },
+    {
+      id: 'modelos',
+      title: 'Modelos',
+      content: (
+        <div>
+          <h2 style={styles.sectionHeading}>Modelos</h2>
+          <p>
+            Carregando os modelos...
+          </p>
+        </div>
+      ),
+      action: openModelsLink,
+    },
   ];
 
   // Handler for changing sections
@@ -316,9 +357,12 @@ const TCCPage: React.FC = () => {
             <button
               key={section.id}
               onClick={() => handleSectionChange(section.id)}
+              onMouseEnter={() => setHoveredButton(section.id)}
+              onMouseLeave={() => setHoveredButton(null)}
               style={{
                 ...styles.navButton,
                 ...(activeSection === section.id ? styles.navButtonActive : {}),
+                ...(hoveredButton === section.id && activeSection !== section.id ? styles.navButtonHover : {}),
               }}
             >
               {section.title}
