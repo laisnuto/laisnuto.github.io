@@ -33,22 +33,45 @@ const TCCPage: React.FC = () => {
       boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
     },
     title: {
-      fontSize: '2.5rem',
-      marginBottom: '10px',
+      fontSize: '1.8rem',
+      marginBottom: '5px',
       color: '#2c3e50',
       textAlign: 'center' as const,
     },
     subtitle: {
       fontSize: '1.5rem',
+      marginBottom: '0',
       color: '#7f8c8d',
-      marginBottom: '20px',
       textAlign: 'center' as const,
+      fontStyle: 'italic' as const,
+    },
+    author: {
+      fontSize: '1.1rem',
+      marginTop: '30px',
+      marginBottom: '8px',
+      color: '#2c3e50',
+      textAlign: 'center' as const,
+    },
+    supervisors: {
+      display: 'flex',
+      flexDirection: 'column' as const,
+      alignItems: 'center',
+      marginTop: '16px',
+    },
+    supervisorLine: {
+      fontSize: '1rem',
+      color: '#2c3e50',
+      textAlign: 'center' as const,
+    },
+    supervisorLabel: {
+      fontWeight: 'bold' as const,
     },
     nav: {
       display: 'flex',
       justifyContent: 'center',
       flexWrap: 'wrap' as const,
-      gap: '15px',
+      gap: '10px',
+      marginTop: '30px',
       marginBottom: '30px',
     },
     navButton: {
@@ -165,15 +188,18 @@ const TCCPage: React.FC = () => {
   const sections: Section[] = [
     {
       id: 'about',
-      title: 'Sobre o Projeto',
+      title: 'Resumo',
       content: (
         <div>
-          <h2 style={styles.sectionHeading}>Sobre o Projeto</h2>
+          <h2 style={styles.sectionHeading}>Resumo</h2>
           <p>
-          Este projeto representa uma parte muito importante da minha trajetória acadêmica. Desde o Ensino Médio, me envolvo com iniciativas voluntárias na área da Educação e, nos últimos anos, venho trabalhando em uma EdTech. Por isso, poder unir esses dois mundos no meu TCC, tecnologia e Educação, torna esse projeto ainda mais significativo.
+          Sistemas automatizados de correção de redações podem, por um lado, reduzir a carga de trabalho dos professores nessa tarefa e, por outro, permitir que os estudantes pratiquem com mais frequência devido a ciclos de <em>feedback</em> mais rápidos. No português brasileiro, há um interesse crescente em sistemas de correção automática voltados para o exame padronizado ENEM. No entanto, os conjuntos de dados atualmente disponíveis consistem apenas em redações produzidas como prática para o exame oficial.
           </p>
           <p>
-          O foco do trabalho é investigar se modelos de linguagem treinados em redações não oficiais (simulados do ENEM) conseguem avaliar adequadamente redações oficiais do exame. Redações oficiais do ENEM são extremamente difíceis de obter, pois apenas algumas redações nota mil são divulgadas publicamente. Por isso, a maioria dos sistemas de correção automática são treinados em datasets de redações de simulados, mas não há validação se esses modelos performam bem em redações oficiais. Neste trabalho, construímos um dataset inédito de 157 redações oficiais do ENEM com suas notas oficiais e testamos se modelos pré-treinados em redações não oficiais conseguem avaliar essas redações oficiais.
+          A questão sobre se esses conjuntos de dados de simulados fornecem informações úteis para a avaliação de redações oficiais do ENEM ainda não havia sido investigada na literatura. Este trabalho preenche essa lacuna ao apresentar um novo conjunto de dados rotulados composto por 157 redações escritas no exame oficial do ENEM.
+          </p>
+          <p>
+          Foi observado que o conjunto de dados apresentado neste trabalho compartilha características semelhantes às de conjuntos de redações produzidas em simulados. Também foi demonstrado que, para conjuntos pequenos como o utilizado neste estudo, o uso de <em>Large Language Models</em> (LLMs) pré-treinados em redações de simulados melhora significativamente o desempenho de sistemas automáticos de correção aplicados a textos oficiais do ENEM, resultando em um ganho médio de 0,27 pontos na métrica <em>Quadratic Weighted Kappa</em> em comparação com o treinamento realizado exclusivamente com dados oficiais.
           </p>
           <div style={styles.flexRow}>
             <div style={styles.card}>
@@ -271,8 +297,20 @@ const TCCPage: React.FC = () => {
         
         <h1 style={styles.title}>Avaliação de Modelos de Correção Automática de Redações ENEM</h1>
         <p style={styles.subtitle}>
-        Um estudo com redações oficiais
+        um estudo com redações oficiais
         </p>
+    
+        <div style={styles.supervisors}>
+          <p style={styles.supervisorLine}>
+            <span style={styles.supervisorLabel}>Autor:</span> Laís Nuto Rossman
+          </p>
+          <p style={styles.supervisorLine}>
+              <span style={styles.supervisorLabel}>Orientador:</span> Prof. Dr. Denis Deratani Mauá
+          </p>
+          <p style={styles.supervisorLine}>
+            <span style={styles.supervisorLabel}>Coorientador:</span> Prof. Msc. Igor Cataneo Silveira
+          </p>
+        </div>
         <nav style={styles.nav}>
           {sections.map((section) => (
             <button
