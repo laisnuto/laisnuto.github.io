@@ -36,11 +36,57 @@
         }
       }(window.location))
     </script>
-    <!-- O script do React será injetado automaticamente durante o build -->
+    <script defer="defer" src="/static/js/main.e07cc68a.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Conteúdo estático para wget e crawlers (será substituído pelo React quando JS carregar) -->
+      <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; color: #333;">
+        <header style="display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; padding: 20px; border-bottom: 1px solid #eaeaea; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <h1 style="font-size: 1.8rem; margin-bottom: 5px; color: #2c3e50; text-align: center;">Avaliação de Modelos de Correção Automática de Redações ENEM</h1>
+          <p style="font-size: 1.5rem; margin-bottom: 0; color: #7f8c8d; text-align: center; font-style: italic;">um estudo com redações oficiais</p>
+          <div style="display: flex; flex-direction: column; align-items: center; margin-top: 16px;">
+            <p style="font-size: 1rem; color: #2c3e50; text-align: center;"><span style="font-weight: bold;">Autor:</span> Laís Nuto Rossman</p>
+            <p style="font-size: 1rem; color: #2c3e50; text-align: center;"><span style="font-weight: bold;">Orientador:</span> Prof. Dr. Denis Deratani Mauá</p>
+            <p style="font-size: 1rem; color: #2c3e50; text-align: center;"><span style="font-weight: bold;">Coorientador:</span> Prof. Msc. Igor Cataneo Silveira</p>
+          </div>
+          <nav style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 30px; margin-bottom: 30px;">
+            <button style="padding: 10px 20px; background-color: #4a89dc; color: white; border: 1px solid #4a89dc; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: all 0.3s ease; outline: none;">Resumo</button>
+            <a href="/files/Proposta_de_TCC.pdf" target="_blank" style="padding: 10px 20px; background-color: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 4px; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Proposta</a>
+            <a href="/files/poster.pdf" target="_blank" style="padding: 10px 20px; background-color: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 4px; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Poster</a>
+            <a href="/files/monografia.pdf" target="_blank" style="padding: 10px 20px; background-color: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 4px; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Monografia</a>
+            <a href="https://huggingface.co/datasets/laisnuto/self-collected-ENEM-dataset" target="_blank" style="padding: 10px 20px; background-color: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 4px; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Dataset</a>
+            <a href="https://huggingface.co/laisnuto/collections" target="_blank" style="padding: 10px 20px; background-color: #f8f9fa; color: #333; border: 1px solid #dee2e6; border-radius: 4px; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Modelos</a>
+          </nav>
+        </header>
+        <main style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); line-height: 1.6; min-height: 300px;">
+          <h2 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #4a89dc; padding-bottom: 10px;">Resumo</h2>
+          <p>Sistemas automatizados de correção de redações podem, por um lado, reduzir a carga de trabalho dos professores nessa tarefa e, por outro, permitir que os estudantes pratiquem com mais frequência devido a ciclos de <em>feedback</em> mais rápidos. No português brasileiro, há um interesse crescente em sistemas de correção automática voltados para o exame padronizado ENEM. No entanto, os conjuntos de dados atualmente disponíveis consistem apenas em redações produzidas como prática para o exame oficial.</p>
+          <p>A questão sobre se esses conjuntos de dados de simulados fornecem informações úteis para a avaliação de redações oficiais do ENEM ainda não havia sido investigada na literatura. Este trabalho preenche essa lacuna ao apresentar um novo conjunto de dados rotulados composto por 157 redações escritas no exame oficial do ENEM.</p>
+          <p>Foi observado que o conjunto de dados apresentado neste trabalho compartilha características semelhantes às de conjuntos de redações produzidas em simulados. Também foi demonstrado que, para conjuntos pequenos como o utilizado neste estudo, o uso de <em>Large Language Models</em> (LLMs) pré-treinados em redações de simulados melhora significativamente o desempenho de sistemas automáticos de correção aplicados a textos oficiais do ENEM, resultando em um ganho médio de 0,27 pontos na métrica <em>Quadratic Weighted Kappa</em> em comparação com o treinamento realizado exclusivamente com dados oficiais.</p>
+          <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+            <div style="flex: 1 1 300px; padding: 20px; border: 1px solid #eaeaea; border-radius: 8px; background-color: #f9f9f9;">
+              <h3>Problema de Pesquisa</h3>
+              <p>Modelos treinados em redações não oficiais (simulados do ENEM) podem avaliar adequadamente redações oficiais do exame? Existe transferência de aprendizado entre datasets de redações não oficiais e redações oficiais do ENEM?</p>
+            </div>
+            <div style="flex: 1 1 300px; padding: 20px; border: 1px solid #eaeaea; border-radius: 8px; background-color: #f9f9f9;">
+              <h3>Objetivos</h3>
+              <p>Construir e disponibilizar um dataset de redações oficiais do ENEM com suas notas oficiais.</p>
+              <p>Investigar se os simulados são realmente parecidos com as redações oficiais através de análise comparativa.</p>
+              <p>Avaliar se modelos treinados apenas em simulados conseguem corrigir adequadamente textos reais (zero-shot).</p>
+              <p>Analisar o desempenho ao treinar modelos apenas no conjunto oficial (pequeno).</p>
+              <p>Verificar se o pré-treino em simulados melhora a correção de textos oficiais.</p>
+            </div>
+            <div style="flex: 1 1 300px; padding: 20px; border: 1px solid #eaeaea; border-radius: 8px; background-color: #f9f9f9;">
+              <h3>Justificativa</h3>
+              <p>Apesar dos avanços em IA, os modelos atuais de correção automática enfrentam uma limitação crítica: são treinados principalmente em redações de simulados do ENEM, pois redações oficiais são extremamente difíceis de obter. No entanto, não há validação se esses modelos performam adequadamente em redações oficiais do exame. A criação de um dataset de redações oficiais permite validar a efetividade desses sistemas, tornando-os mais confiáveis e úteis como ferramenta de apoio para estudantes, professores e plataformas educacionais que buscam preparação para o ENEM real.</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- O React substituirá este conteúdo quando o JavaScript carregar -->
   </body>
 </html>
 
