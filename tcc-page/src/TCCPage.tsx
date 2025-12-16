@@ -179,16 +179,16 @@ const TCCPage: React.FC = () => {
 
  
   const openProposalPDF = () => {
-    window.open('/files/Proposta_de_TCC.pdf', '_blank');
+    window.open('https://laisnuto.github.io/files/Proposta_de_TCC.pdf', '_blank');
   };
 
  
   const openPosterPDF = () => {
-    window.open('/files/poster.pdf', '_blank');
+    window.open('https://laisnuto.github.io/files/poster.pdf', '_blank');
   };
 
   const openMonografiaPDF = () => {
-    window.open('/files/monografia.pdf', '_blank');
+    window.open('https://laisnuto.github.io/files/monografia.pdf', '_blank');
   };
 
   const openDatasetLink = () => {
