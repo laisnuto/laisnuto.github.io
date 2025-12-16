@@ -53,6 +53,13 @@ cd ..
 cp -r tcc-page/build/* .
 ```
 
+**IMPORTANTE:** Copie também o arquivo `tcc/index.html` para garantir que a rota `/tcc` funcione:
+
+```
+mkdir -p tcc
+cp tcc-page/public/tcc/index.html tcc/index.html
+```
+
 Se você adicionou novos arquivos na pasta public (como PDFs), copie-os também:
 
 ```
@@ -106,15 +113,45 @@ https://laisnuto.github.io/
 ## Resumo dos Comandos
 
 ```
-cd ~/Documents/TCC/tcc-page
+cd ~/Documents/laisnuto.github.io/tcc-page
 [edite os arquivos]
 npm run build
 cd ..
 cp -r tcc-page/build/* .
+mkdir -p tcc
+cp tcc-page/public/tcc/index.html tcc/index.html
 [verifique e corrija o título no index.html se necessário]
 git add .
 git commit -m "Descrição das alterações"
 git push origin main
+```
+
+## Como Testar
+
+### Teste Local (desenvolvimento):
+```
+cd tcc-page
+npm start
+# Abra http://localhost:3000/tcc no navegador
+```
+
+### Teste Local (produção simulada):
+```
+cd tcc-page
+npm run build
+cd ..
+cp -r tcc-page/build/* .
+mkdir -p tcc
+cp tcc-page/public/tcc/index.html tcc/index.html
+python3 -m http.server 8000
+# Abra http://localhost:8000/tcc no navegador
+```
+
+### Teste com wget (após fazer deploy):
+```
+wget https://laisnuto.github.io/tcc
+# Ou
+wget https://laisnuto.github.io/tcc/
 ```
 
 ## Observações Importantes
