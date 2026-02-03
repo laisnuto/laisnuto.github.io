@@ -188,7 +188,7 @@ const TCCPage: React.FC = () => {
   };
 
   const openMonografiaPDF = () => {
-    window.open('/files/monografia.pdf', '_blank');
+    window.open('/files/monografia.pdf?v=2', '_blank');
   };
 
   const openDatasetLink = () => {
