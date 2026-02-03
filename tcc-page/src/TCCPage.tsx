@@ -188,7 +188,7 @@ const TCCPage: React.FC = () => {
   };
 
   const openMonografiaPDF = () => {
-    window.open('/files/monografia.pdf?v=2', '_blank');
+    window.open('/files/monografia.pdf', '_blank');
   };
 
   const openDatasetLink = () => {
@@ -338,7 +338,7 @@ const TCCPage: React.FC = () => {
         
         <h1 style={styles.title}>Avaliação de Modelos de Correção Automática de Redações ENEM</h1>
         <p style={styles.subtitle}>
-        um estudo com redações oficiais
+        Um estudo com redações oficiais
         </p>
     
         <div style={styles.supervisors}>
